@@ -1,0 +1,13 @@
+sources:
+  - name: raw_data
+    schema: raw_data_my_cases
+    tables:
+      - name: raw_customers
+        #tests: #somehow this doesnt work in the dbt_studio but works in dbt core.
+        #  - not_null:
+        #    column_name: id
+        #    description: "Primary Key of the source"
+        columns:
+          - name: id 
+            tests:
+              - not_null
