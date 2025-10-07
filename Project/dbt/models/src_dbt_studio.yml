@@ -11,3 +11,11 @@ sources:
           - name: id 
             tests:
               - not_null
+            description: Primary key of the table
+      - name: raw_orders
+        description: '{{ docs("src_dbt_studio") }}'
+        freshness:
+          warn_after:
+            count: 5
+            period: day
+        loaded_at_field: ordered_at
