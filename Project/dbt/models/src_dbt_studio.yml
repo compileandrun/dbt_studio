@@ -13,7 +13,7 @@ sources:
               - not_null
             description: Primary key of the table
       - name: raw_orders
-        description: '{{ docs("src_dbt_studio") }}'
+        description: '{{ doc("src_dbt_studio_") }}'
         freshness:
           warn_after:
             count: 5
