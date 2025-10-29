@@ -14,6 +14,17 @@
 select *
 from {{ source('raw_data', 'raw_customers') }}
 
+    
+{% if DBT_DATASET == 'dbt_prod' %}
+
+limit 100
+
+{% else %}
+
+limit 10
+
+{% endif %}
+
 /*
     Uncomment the line below to remove records with null `id` values
 */
