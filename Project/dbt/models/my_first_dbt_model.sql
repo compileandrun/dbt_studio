@@ -14,14 +14,14 @@
 select *
 from {{ source('raw_data', 'raw_customers') }}
 
-    
-{% if DBT_DATASET == 'dbt_prod' %}
+{% set var = env_var('DBT_DATASET') %}    
+{% if var == 'dbt_dev' %}
 
-limit 100
+limit 111
 
 {% else %}
 
-limit 10
+limit 22
 
 {% endif %}
 
